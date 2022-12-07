@@ -13,7 +13,7 @@ import useLogin from '@/composables/useLogin'
 import { async } from '@firebase/util'
 
     export default {
-        setup(){
+        setup(props, context){
             const {error, login} = useLogin()
 
             // REFS
@@ -24,6 +24,7 @@ import { async } from '@firebase/util'
                 await login(email.value, password.value)
                 if (!error.value){
                     console.log('User Logged In');
+                    context.emit('login')
                 }
             }
 

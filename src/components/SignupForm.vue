@@ -14,7 +14,7 @@ import useSignup from '@/composables/useSignup'
 import { async } from '@firebase/util'
 
     export default {
-        setup(){
+        setup(props, context){
             const {error, signup} = useSignup()
 
             // REFS
@@ -24,7 +24,9 @@ import { async } from '@firebase/util'
 
             const handleSubmit = async () => {
                 await signup(email.value, password.value, displayName.value)
-                alert('User Signed up');
+                if (!error.value) {
+                    context.emit('signup')
+                }
             }
 
             return {displayName , email, password, handleSubmit, error}
