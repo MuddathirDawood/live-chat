@@ -5,7 +5,6 @@ import { projectAuth } from "@/firebase/config"
 // AUTH GUARD
 const authGuard = (to, from, next) => {
   let user = projectAuth.currentUser
-  console.log('Current user in auth guard: ', user);
   if (!user) {
     next({ name: 'Welcome'})
   } else {
@@ -13,12 +12,21 @@ const authGuard = (to, from, next) => {
   }
 }
 
+const noAuth = (to, from, next) => {
+  let user = projectAuth.currentUser
+  if (user) {
+    next({ name: 'Chatroom'})
+  } else {
+    next()
+  }
+}
 
 const routes = [
   {
     path: '/',
     name: 'Welcome',
-    component: () => import('../views/Welcome.vue')
+    component: () => import('../views/Welcome.vue'),
+    beforeEnter: noAuth
   },
   {
     path: '/chatroom',
