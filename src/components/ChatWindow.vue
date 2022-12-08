@@ -43,7 +43,7 @@ import { computed, onUpdated, ref } from 'vue';
 
 <style scoped>
 .chat-window{
-    background: #fafafa;
+    background: #2e2e2e;
     padding: 30px 20px;
 }
 
@@ -60,6 +60,7 @@ import { computed, onUpdated, ref } from 'vue';
 .name{
     font-weight: bold;
     margin-right: 6px;
+    color: #0024d6;
 }
 
 .messages{

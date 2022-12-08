@@ -43,11 +43,11 @@ nav{
 nav p{
     margin: 2px auto;
     font-size: 16px;
-    color: #444;
+    color: white;
 }
 
 nav p.email{
     font-size: 14px;
-    color: #999;
+    color: #a4a4a4;
 }
 </style>

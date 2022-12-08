@@ -57,9 +57,9 @@ export default {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid #eee;
+    border: 1px solid #0023ce;
     outline: none;
-    color: #999;
+    color: black;
     margin: 10px auto;
   }
 
@@ -67,6 +67,7 @@ export default {
     font-weight: bold;
     text-decoration: underline;
     cursor: pointer;
+    color: white;
   }
 
   .welcome button{
